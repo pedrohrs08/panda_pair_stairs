@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  post "panda/create_panda" => "panda#create_panda"
+  post "panda/create_panda", to: "panda#create_panda", defaults: { format: 'json' }
+  get "panda/all", to: "panda#pandas", defaults: { format: 'json' }
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
