@@ -1,8 +1,12 @@
 class PandaController < ApplicationController
 	def create_panda
 		@panda = Panda.new(panda_params)
-		@panda.save if @panda.valid?
-		respond_to { |format| format.json { render json: @panda} }
+        if @panda.valid?
+			@panda.save 
+			respond_to { |format| format.json { render json: @panda} }
+		else
+            respond_to { |format| format.json { render json: @panda, status: :unprocessable_entity } }
+		end
 	end
 
   private

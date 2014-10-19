@@ -13,12 +13,19 @@ describe PandaController, type: :controller do
 
 		it "should create a panda if panda does not exist yet" do
 			expect{ post :create_panda, create_panda_contract }.to change{ Panda.count }.by(1)
-			expect(JSON.parse(response.body)["name"]).to eq("Super Panda")
+			panda_response = JSON.parse(response.body)
+			expect(panda_response["name"]).to eq("Super Panda")
+			expect(panda_response["errors"]).to be_nil
+
 		end
 
 		it "should not create a panda if panda doesn't have a name" do
 			create_panda_contract[:panda][:name] = ""
+		
 			expect{ post :create_panda, create_panda_contract }.to_not change{ Panda.count }
+		    panda_response = JSON.parse(response.body)
+		    expect(panda_response["errors"]).to_not be_nil
+             
 		end
 	end
 end

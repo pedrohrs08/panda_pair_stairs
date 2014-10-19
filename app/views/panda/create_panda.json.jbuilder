@@ -1,1 +1,1 @@
-json.extract! @panda, :name
+json.extract! @panda, :name, :errors
