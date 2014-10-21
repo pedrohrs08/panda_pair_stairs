@@ -3,7 +3,6 @@ class PairController < ApplicationController
 	  	pair_params[:date_of_pairing] = Date.parse(pair_params[:date_of_pairing])
 	  	@pair = Pair.new(pair_params)
 		@pair.save
-		p @pair.errors
 	 	respond_to do |format|
 	 	   	format.json { render json: { pair: @pair, errors: @pair.errors } }
 	 	end
