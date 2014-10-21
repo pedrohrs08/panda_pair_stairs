@@ -1,3 +1,8 @@
+
+{<img src="https://coveralls.io/repos/pedrohrs08/panda_pair_stairs/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/pedrohrs08/panda_pair_stairs]
+
+{<img src="https://travis-ci.org/pedrohrs08/panda_pair_stairs.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/pedrohrs08/panda_pair_stairs]
+
 == README
 
 This README would normally document whatever steps are necessary to get the
