@@ -1,2 +1,2 @@
-<h1>Pair#create_pair</h1>
-<p>Find me in app/views/pair/create_pair.html.erb</p>
+json.pair @pair
+json.errors @pair.errors

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   resources :tests
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   post "panda/create_panda", to: "panda#create_panda", defaults: { format: 'json' }
   post 'pair/create_pair', to: "pair#create_pair", defaults: { format: 'json' }
   get "panda/all", to: "panda#pandas", defaults: { format: 'json' }
+  get 'iteration/create_iteration', to: "iteration#create_iteration", defaults: { format: 'json' }
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

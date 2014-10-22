@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe PairController, type: :controller do 
+	render_views
+	
 	before do 
 		Panda.create!(name: "Panda1")
 		Panda.create!(name: "Panda2")

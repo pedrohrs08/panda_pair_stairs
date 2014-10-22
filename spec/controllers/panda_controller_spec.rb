@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe PandaController, type: :controller do
+	render_views
+	
 	context "#create_panda" do
         let (:create_panda_contract) {
         	{
@@ -26,6 +28,15 @@ describe PandaController, type: :controller do
 		    expect(panda_response["errors"]).to_not be_empty
 		    expect(panda_response["errors"]).to have_key("name")
 		    expect(panda_response["errors"]["name"]).to include "can't be blank"       
+		end
+	end
+
+	context "#pandas" do
+		it "should return all the pandas" do
+			Panda.create!(name: "Panda")
+			get :pandas, { format: 'json' }
+			p response.body
+			expect(JSON.parse(response.body)["pandas"].count).to eq 1
 		end
 	end
 end
