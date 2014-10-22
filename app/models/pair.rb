@@ -11,6 +11,7 @@ class Pair
   field :date_of_pairing, type: Date
   field :work_done, type: String
 
+  scope :find_within_period,->(start_date,end_date){ where(date_of_pairing: start_date..end_date) }
   private
   def different_pandas
   	errors.add(:first_panda, "first panda should be differant than second panda") if self.first_panda == self.second_panda

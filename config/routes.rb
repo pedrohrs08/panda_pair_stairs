@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post 'pair/create_pair', to: "pair#create_pair", defaults: { format: 'json' }
   get "panda/all", to: "panda#pandas", defaults: { format: 'json' }
   get 'iteration/create_iteration', to: "iteration#create_iteration", defaults: { format: 'json' }
+  get 'pairs/from/:start_date/to/:end_date', to: "pair#get_pairs_within_period", defaults: { format: 'json' }
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
