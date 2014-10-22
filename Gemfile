@@ -15,9 +15,14 @@ gem 'mongoid','~>4.0.0'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-gem 'rspec-rails'
-gem 'backbone-rails'
-gem 'database_cleaner'
+gem 'backbone-on-rails'
+
+group :test do
+	gem 'capybara-rails'
+	gem 'cucumber-rails', require: false
+	gem 'database_cleaner'
+	gem 'rspec-rails'
+end
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
